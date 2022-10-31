@@ -1,0 +1,6 @@
+data:
+    path: data/heart_cleveland_upload.csv
+    test_size: 0.3
+    shuffle: True
+    random_state: 888
+    skiped_columns: []
