@@ -3,6 +3,8 @@ import os
 import numpy as np
 from model import data_preprocessing
 
+if not os.path.exists("tests/test_data"):
+	os.mkdir("tests/test_data")
 
 def test_data_processing1():
 	test_input = {

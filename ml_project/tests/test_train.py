@@ -4,6 +4,9 @@ import numpy as np
 from model import data_preprocessing
 from model.train import Trainer
 
+if not os.path.exists("tests/test_data"):
+	os.mkdir("tests/test_data")
+
 def init_data():
 	test_input = {
 		'path': 'data/heart_cleveland_upload.csv',
