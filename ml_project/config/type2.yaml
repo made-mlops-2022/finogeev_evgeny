@@ -3,7 +3,7 @@ data_preprocessing:
   test_size: 0.3
   shuffle: True
   random_state: 888
-  skiped_columns: []
+  skiped_columns: [trestbps, restecg]
 
   train_data_path: artifacts/X_train.npy
   train_targer_path: artifacts/Y_train.npy
@@ -14,7 +14,7 @@ train:
   train_data_path: artifacts/X_train.npy
   train_targer_path: artifacts/Y_train.npy
   
-  algorithm: "decision_tree" # logigstic_regression, decision_tree, random_forest
+  algorithm: "random_forest" # logigstic_regression, decision_tree, random_forest
   logigstic_regression: 
     penalty: 'l2'
     C: 1.0
