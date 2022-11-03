@@ -1,4 +1,5 @@
-import pandas as pd 
+import pandas as pd
+
 
 def main():
     df = pd.read_csv("data/heart_cleveland_upload.csv")
@@ -26,6 +27,7 @@ def main():
     print("Пример данных")
     print(df.sample(10))
     print("==="*20)
+
 
 if __name__ == "__main__":
     main()
