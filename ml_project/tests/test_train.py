@@ -32,6 +32,7 @@ def test_train1():
 	  "train_targer_path": "tests/test_data/Y_train.npy",
 	  
 	  "algorithm": "logigstic_regression", # logigstic_regression, decision_tree, random_forest
+	  "drop_X_prob": 0.2, 
 	  "logigstic_regression": {
 	    "penalty": 'l2',
 	    "C": 1.0,
@@ -56,6 +57,7 @@ def test_train2():
 	  "train_targer_path": "tests/test_data/Y_train.npy",
 	  
 	  "algorithm": "decision_tree", # logigstic_regression, decision_tree, random_forest
+	  "drop_X_prob": 0.2, 
 	  "decision_tree": {
 	    "criterion": 'gini',
 	    "splitter": 'best',
@@ -81,6 +83,7 @@ def test_train3():
 	  "train_targer_path": "tests/test_data/Y_train.npy",
 	  
 	  "algorithm": "random_forest", # logigstic_regression, decision_tree, random_forest
+	  "drop_X_prob": 0.2, 
 	  "random_forest": {
 	    "n_estimators": 100,
 	    "criterion": 'gini',

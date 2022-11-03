@@ -29,6 +29,7 @@ def init_data():
 	  "train_targer_path": "tests/test_data/Y_train.npy",
 	  
 	  "algorithm": "logigstic_regression", # logigstic_regression, decision_tree, random_forest
+	  "drop_X_prob": 0.2, 
 	  "logigstic_regression": {
 	    "penalty": 'l2',
 	    "C": 1.0,
