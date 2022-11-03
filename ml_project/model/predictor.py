@@ -35,8 +35,7 @@ class Predictor:
 
 		logger.info("Predict done")
 
-if __name__ == "__main__":
-
+def main():
 	parser = argparse.ArgumentParser()
 	parser.add_argument("--config_path", default='config/type1.yaml', type=str, help='Path to config')
 	args = parser.parse_args()
@@ -48,3 +47,7 @@ if __name__ == "__main__":
 
 	predictor = Predictor(config['predict'])
 	predictor.predict()
+
+if __name__ == "__main__":
+	main()
+	

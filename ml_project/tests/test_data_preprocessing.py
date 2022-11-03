@@ -74,4 +74,10 @@ def test_data_processing2():
 		y = np.load(f)
 	assert X.shape[0] == y.shape[0]
 
-
+def test_transformer():
+	trans = data_preprocessing.DropTransformer(0.2)
+	X = np.ones((1000, 5))
+	trans.fit(X)
+	X_new = trans.transform(X)
+	assert X_new[X_new == 0].shape[0] > 0
+	assert X_new.shape == X.shape

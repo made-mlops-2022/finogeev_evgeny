@@ -9,7 +9,7 @@ if not os.path.exists("tests/test_data"):
 
 def init_data():
 	test_input = {
-		'path': 'data/heart_cleveland_upload.csv',
+		'path': 'data/test_generated_data.csv',
 		"test_size": 0.5,
 		"shuffle": False,
 		"random_state": 888,
@@ -46,7 +46,7 @@ def test_train1():
 
 	trainer = Trainer(train_input)
 	trainer.train()
-	assert os.path.exists(train_input['model_save_path'])	
+	assert os.path.exists(train_input['model_save_path'])
 
 def test_train2():
 	init_data()

@@ -34,9 +34,9 @@ class Evaluator:
 		logger.info(str(classification_report(y, model.predict(X))))
 
 		logger.info("Eval done")
+		return classification_report(y, model.predict(X), output_dict=True)
 
-if __name__ == "__main__":
-
+def main():
 	parser = argparse.ArgumentParser()
 	parser.add_argument("--config_path", default='config/type1.yaml', type=str, help='Path to config')
 	args = parser.parse_args()
@@ -48,3 +48,7 @@ if __name__ == "__main__":
 
 	evaluator = Evaluator(config['eval'])
 	evaluator.eval()
+
+if __name__ == "__main__":
+	main()
+	

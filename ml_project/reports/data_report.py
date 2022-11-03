@@ -1,6 +1,6 @@
 import pandas as pd 
 
-if __name__ == "__main__":
+def main():
     df = pd.read_csv("data/heart_cleveland_upload.csv")
     print("Размер данных", df.shape[0])
     print("==="*20)
@@ -26,3 +26,6 @@ if __name__ == "__main__":
     print("Пример данных")
     print(df.sample(10))
     print("==="*20)
+
+if __name__ == "__main__":
+    main()

@@ -5,6 +5,7 @@ import logging
 import argparse
 
 import numpy as np
+from model.data_preprocessing import DropTransformer
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
@@ -29,6 +30,15 @@ class Trainer:
 		logger.info("Load data")
 		X = self.__load_data(self.config['train_data_path'])
 		y = self.__load_data(self.config['train_targer_path'])
+
+		if self.config['drop_X_prob'] > 0 and self.config['drop_X_prob'] < 1:
+			logger.info("DropTransformer apply")
+			logger.info("Prob = {}".format(self.config['drop_X_prob']))
+			trans = DropTransformer(self.config['drop_X_prob'])
+			trans.fit(X)
+			X = trans.transform(X)
+		elif self.config['drop_X_prob'] > 1:
+			logger.info("DropTransformer has incorrect prob. Skip aplly")
 
 		if self.config['algorithm'] == 'logigstic_regression':
 			logger.info("Algorithm - LogisticRegression")
@@ -60,8 +70,7 @@ class Trainer:
 
 		logger.info("Train done")
 
-if __name__ == "__main__":
-
+def main():
 	parser = argparse.ArgumentParser()
 	parser.add_argument("--config_path", default='config/type1.yaml', type=str, help='Path to config')
 	args = parser.parse_args()
@@ -73,3 +82,7 @@ if __name__ == "__main__":
 
 	trainer = Trainer(config['train'])
 	trainer.train()
+
+if __name__ == "__main__":
+	main()
+	

@@ -15,6 +15,7 @@ train:
   train_targer_path: artifacts/Y_train.npy
   
   algorithm: "random_forest" # logigstic_regression, decision_tree, random_forest
+  drop_X_prob: 0
   logigstic_regression: 
     penalty: 'l2'
     C: 1.0
