@@ -127,6 +127,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+**.pt
 **.pth
-**.npy
+ml_project/artifacts/**.npy
 **.pickle
+**.parquet
